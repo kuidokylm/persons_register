@@ -102,12 +102,12 @@
 							<wsdlOption>
 								<wsdl>${basedir}/src/main/resources/persons_register.wsdl</wsdl>
 								<wsdlLocation>classpath:persons_register.wsdl</wsdlLocation>
-								 <extraargs>
+ 								 <extraargs>
 									<extraarg>-impl</extraarg>
 									<extraarg>-exsh</extraarg>
 									<extraarg>true</extraarg>
 								</extraargs>
-							</wsdlOption>
+ 							</wsdlOption>
 						</wsdlOptions>
 					</configuration>
 					<goals>
