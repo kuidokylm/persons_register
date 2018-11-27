@@ -14,8 +14,8 @@
   <url>http://www.example.com</url>
 
   <properties>
-	<cxf.version>3.2.0</cxf.version>
-	<spring.version>4.3.11.RELEASE</spring.version>
+	<cxf.version>3.2.7</cxf.version>
+	<spring.version>5.1.2.RELEASE</spring.version>
 	<cxf.scope>compile</cxf.scope>
 	<compileSource>1.8</compileSource>
 	<maven.compiler.target>1.8</maven.compiler.target>
@@ -23,12 +23,12 @@
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
   </properties>
   <dependencies>
-    <dependency>
+    <!-- <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
       <scope>test</scope>
-    </dependency>
+    </dependency> -->
     <dependency>
 		<groupId>org.apache.cxf</groupId>
 		<artifactId>cxf-core</artifactId>
@@ -57,14 +57,14 @@
 
   <build>
     <finalName>persons_register</finalName>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <!-- <pluginManagement> lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
-        <plugin>
+<!--        <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
-        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
-        <plugin>
+ -->        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
+        <!-- <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
         </plugin>
@@ -87,7 +87,7 @@
         <plugin>
           <artifactId>maven-deploy-plugin</artifactId>
           <version>2.8.2</version>
-        </plugin>
+        </plugin> -->
         <plugin>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-codegen-plugin</artifactId>
@@ -95,7 +95,7 @@
 			<executions>
 				<execution>
 					<id>generate-sources</id>
-					<phase>generate-sources</phase>					
+					<phase>generate-sources</phase>				
 					<configuration>
 						<sourceRoot>${basedir}/src/main/java</sourceRoot>
 						<wsdlOptions>
@@ -116,38 +116,25 @@
 				</execution>
 			</executions>
 		</plugin>
-<!-- 		<plugin>
-	        <groupId>org.antlr</groupId>
-	        <artifactId>antlr4-maven-plugin</artifactId>
-	        <version>4.5.3</version>
-	        <executions>
-	          <execution>
-	            <id>antlr</id>
-	            <goals>
-	              <goal>antlr4</goal>
-	            </goals>
-	          </execution>
-	        </executions>
-	    </plugin> -->
-		<plugin>
+		<!-- <plugin>
 			<groupId>org.codehaus.mojo</groupId>
 		        <artifactId>build-helper-maven-plugin</artifactId>
 		        <executions>
-				<execution>
-					<id>add-source</id>
-					<phase>generate-sources</phase>
-					<goals>
-						<goal>add-source</goal>
-					</goals>
-					<configuration>
-						<sources>
-							<source>${project.build.directory}/generated-sources/cxf/</source>
-						</sources>
-					</configuration>
-				</execution>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${project.build.directory}/generated-sources/cxf/</source>
+							</sources>
+						</configuration>
+					</execution>
 		        </executions>
-		</plugin>        
+		</plugin> -->
       </plugins>
-    </pluginManagement>
+    <!-- </pluginManagement> -->
   </build>
 </project>
